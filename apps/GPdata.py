@@ -30,30 +30,128 @@ def app():
 
     st.markdown("""
     """)
-    
-
-    st.sidebar.header("Choose Columns:")
-    columns = st.sidebar.multiselect(
-        "Select the columns to plot",
-        options = df.columns,
-        default = df.columns.max()
-    )
 
 
-    df = px.line(
+    df = px.scatter(
         df, #this is the dataframe you are trying to plot
         x = "DAYZ",
-        y = columns,
-        #color = columns,
+        y = ["tx_countz","user_count"],
+        # color = "user_count",
         orientation = "v",
         template = "plotly_white",
         width = 1000,
         height = 600,
         log_y = t_f
     )
-    
-
     st.plotly_chart(df)
+
+
+    query_id = "0a70ffca-17a3-4cd8-8b42-d0820c7dbc48"
+    df = pd.read_json(f"https://api.flipsidecrypto.com/api/v2/queries/{query_id}/data/latest",
+    convert_dates=["TIMESTAMP_NTZ"],
+    )
+    df = px.scatter(
+        df, #this is the dataframe you are trying to plot
+        x = "DAYZ",
+        y = "SUM",
+        # color = "user_count",
+        orientation = "v",
+        template = "plotly_white",
+        width = 1000,
+        height = 600,
+        log_y = t_f
+    )
+    st.plotly_chart(df) 
+
+
+
+    query_id = "0a70ffca-17a3-4cd8-8b42-d0820c7dbc48"
+    df = pd.read_json(f"https://api.flipsidecrypto.com/api/v2/queries/{query_id}/data/latest",
+    convert_dates=["TIMESTAMP_NTZ"],
+    )
+    df = px.scatter(
+        df, #this is the dataframe you are trying to plot
+        x = "DAYZ",
+        y = ["Median","AVG"],
+        # color = "user_count",
+        orientation = "v",
+        template = "plotly_white",
+        width = 1000,
+        height = 600,
+        log_y = t_f
+    )
+    st.plotly_chart(df)
+
+
+
+    query_id = "0a70ffca-17a3-4cd8-8b42-d0820c7dbc48"
+    df = pd.read_json(f"https://api.flipsidecrypto.com/api/v2/queries/{query_id}/data/latest",
+    convert_dates=["TIMESTAMP_NTZ"],
+    )
+    df = px.scatter(
+        df, #this is the dataframe you are trying to plot
+        x = "DAYZ",
+        y = "AVG_Value_Z_Score_(Skew)",
+        # color = "user_count",
+        orientation = "v",
+        template = "plotly_white",
+        width = 1000,
+        height = 600,
+        log_y = t_f
+    )
+    st.plotly_chart(df)  
+
+    query_id = "0a70ffca-17a3-4cd8-8b42-d0820c7dbc48"
+    df = pd.read_json(f"https://api.flipsidecrypto.com/api/v2/queries/{query_id}/data/latest",
+    convert_dates=["TIMESTAMP_NTZ"],
+    )
+    df = px.scatter(
+        df, #this is the dataframe you are trying to plot
+        x = "DAYZ",
+        y = "RUNNING_SKEW",
+        # color = "SUM_rank",
+        orientation = "v",
+        template = "plotly_white",
+        width = 1000,
+        height = 600,
+        log_y = t_f
+    )
+    st.plotly_chart(df)  
+
+
+    query_id = "0a70ffca-17a3-4cd8-8b42-d0820c7dbc48"
+    df = pd.read_json(f"https://api.flipsidecrypto.com/api/v2/queries/{query_id}/data/latest",
+    convert_dates=["TIMESTAMP_NTZ"],
+    )
+    df = px.scatter(
+        df, #this is the dataframe you are trying to plot
+        x = "DAYZ",
+        y = "RUNNING_SUM",
+        # color = "user_count",
+        orientation = "v",
+        template = "plotly_white",
+        width = 1000,
+        height = 600,
+        log_y = t_f
+    )
+    st.plotly_chart(df)      
+    #   
+    query_id = "0a70ffca-17a3-4cd8-8b42-d0820c7dbc48"
+    df = pd.read_json(f"https://api.flipsidecrypto.com/api/v2/queries/{query_id}/data/latest",
+    convert_dates=["TIMESTAMP_NTZ"],
+    )
+    df = px.scatter(
+        df, #this is the dataframe you are trying to plot
+        x = "DAYZ",
+        y = "RUNNING_COUNTZ",
+        # color = "user_count",
+        orientation = "v",
+        template = "plotly_white",
+        width = 1000,
+        height = 600,
+        log_y = t_f
+    )
+    st.plotly_chart(df)  
 # DAYZ	tx_countz	user_count	SUM	AVG	Median	STD DEV	Z_P1	Z_N1	AVG_Value_Z_Score_(Skew)	RUNNING_SKEW	RUNNING_SUM	RUNNING_COUNTZ
     # ------------------------------------------------
 

@@ -61,8 +61,46 @@ def app():
         log_y = t_f
     )
     st.plotly_chart(df)
+    query_id = "a0f06e6e-9b8c-44f2-9934-25a6e6e0801b"
+    df = pd.read_json(f"https://api.flipsidecrypto.com/api/v2/queries/{query_id}/data/latest",
+    convert_dates=["TIMESTAMP_NTZ"],
+    )
+    df = px.scatter_3d(
+        df, #this is the dataframe you are trying to plot
+        x = "TOTAL_CLAIMED_AMOUNT",
+        y = "NET_BOUGHT",
+        z = "NET_IN",
+        # color = "CLAIMER",
+        template = "plotly_white",
+        width = 1000,
+        height = 600,
+        log_y = t_f
+    )
+    st.plotly_chart(df)
+    query_id = "a0f06e6e-9b8c-44f2-9934-25a6e6e0801b"
+    df = pd.read_json(f"https://api.flipsidecrypto.com/api/v2/queries/{query_id}/data/latest",
+    convert_dates=["TIMESTAMP_NTZ"],
+    )
+    df = px.scatter_3d(
+        df, #this is the dataframe you are trying to plot
+        x = "TOTAL_CLAIMED_AMOUNT",
+        y = "TRANSFER_OUT",
+        z = "SELL_AMOUNT",
+        # color = "CLAIMER",
+        template = "plotly_white",
+        width = 1000,
+        height = 600,
+        log_y = t_f
+    )
+    st.plotly_chart(df)
 
     # ------------------------------------------------
 
-# LAST_CLAIMED	CLAIMER	LAST_CLAIMED_AMOUNT	TOTAL_CLAIMED_AMOUNT	MIN_STAGE	MAX_STAGE	AMOUNT_STAKED	AMOUNT_UNSTAKED	NET_STAKED	PCT_STAKED_LAST	BUY_AMOUNT	SELL_AMOUNT	NET_BOUGHT	PCT_BOUGHT_LAST	TRANSFER_IN	TRANSFER_OUT	NET_IN	PCT_TRANSFER_LAST
+# LAST_CLAIMED	CLAIMER	LAST_CLAIMED_AMOUNT	
+# TOTAL_CLAIMED_AMOUNT
+# 	MIN_STAGE	MAX_STAGE	AMOUNT_STAKED	
+# AMOUNT_UNSTAKED	NET_STAKED	
+# PCT_STAKED_LAST	BUY_AMOUNT	SELL_AMOUNT	NET_BOUGHT
+# 	PCT_BOUGHT_LAST	TRANSFER_IN	TRANSFER_OUT	NET_IN	
+# PCT_TRANSFER_LAST
 # https://app.flipsidecrypto.com/velocity/queries/a0f06e6e-9b8c-44f2-9934-25a6e6e0801b

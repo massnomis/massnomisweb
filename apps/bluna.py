@@ -47,6 +47,10 @@ def app():
         log_y = t_f
     )
     st.plotly_chart(df)
+    query_id = "1cbadddb-c968-47de-ab65-e46285ff3bc7"
+    df = pd.read_json(f"https://api.flipsidecrypto.com/api/v2/queries/{query_id}/data/latest",
+    convert_dates=["TIMESTAMP_NTZ"],
+)
     df = px.scatter(
         df, #this is the dataframe you are trying to plot
         x = "DAYZ",
@@ -59,7 +63,11 @@ def app():
         log_y = t_f
     )
     st.plotly_chart(df)
-     df = px.scatter(
+    query_id = "1cbadddb-c968-47de-ab65-e46285ff3bc7"
+    df = pd.read_json(f"https://api.flipsidecrypto.com/api/v2/queries/{query_id}/data/latest",
+    convert_dates=["TIMESTAMP_NTZ"],
+)
+    df = px.scatter(
         df, #this is the dataframe you are trying to plot
         x = "DAYZ",
         y = ["LUNAPREMIUMPCT"],
@@ -72,7 +80,7 @@ def app():
     )
     st.plotly_chart(df)
 
-    
+
     # ------------------------------------------------
     # DAYZ	LUNAPRICE	PRICEBLUNA	LUNAPREMIUM	LUNAPREMIUMPCT
 # https://app.flipsidecrypto.com/velocity/queries/1cbadddb-c968-47de-ab65-e46285ff3bc7

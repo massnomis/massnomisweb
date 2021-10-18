@@ -78,8 +78,57 @@ def app():
         height = 600,
         log_y = t_f
     )
+
+
+    st.plotly_chart(df)
+    query_id = "7a5f2ddb-e8f0-4f90-aee7-220264b8f958"
+    df = pd.read_json(f"https://api.flipsidecrypto.com/api/v2/queries/{query_id}/data/latest",
+    convert_dates=["TIMESTAMP_NTZ"],
+)
+
+ 
+
+
+    st.markdown("""
+    """)
+    
+
+
+
+    df = px.scatter(
+        df, #this is the dataframe you are trying to plot
+        x = "DAYZZZ",
+        y = "AVG(STETH_WETH)",
+        #color = columns,
+        orientation = "v",
+        template = "plotly_white",
+        width = 1000,
+        height = 600,
+        log_y = t_f
+    )
     st.plotly_chart(df)
 
+
+    query_id = "7a5f2ddb-e8f0-4f90-aee7-220264b8f958"
+    df2 = pd.read_json(f"https://api.flipsidecrypto.com/api/v2/queries/{query_id}/data/latest",
+    convert_dates=["TIMESTAMP_NTZ"],
+)
+
+
+    df2 = px.scatter(
+        df2, #this is the dataframe you are trying to plot
+        x = "DAYZZZ",
+        y = "AVG(INV)",
+        #color = columns,
+        orientation = "v",
+        template = "plotly_white",
+        width = 1000,
+        height = 600,
+        log_y = t_f
+    )
+    
+
+    st.plotly_chart(df2)
     # ------------------------------------------------
 # DAYZ	ETHPRICE	PRICEBETH	ETHPREMIUM	ETHPREMIUMPCT
 
