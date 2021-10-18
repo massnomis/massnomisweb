@@ -35,17 +35,31 @@ def app():
 
     df = px.scatter(
         df, #this is the dataframe you are trying to plot
-        x = "LAST_CLAIMED",
-        y = "NET_STAKED",
-        color = "CLAIMER",
+        x = "TOTAL_CLAIMED_AMOUNT",
+        y = "NET_BOUGHT",
+        # color = "CLAIMER",
         orientation = "v",
         template = "plotly_white",
         width = 1000,
         height = 600,
         log_y = t_f
     )
-    
-
+    st.plotly_chart(df)
+    query_id = "a0f06e6e-9b8c-44f2-9934-25a6e6e0801b"
+    df = pd.read_json(f"https://api.flipsidecrypto.com/api/v2/queries/{query_id}/data/latest",
+    convert_dates=["TIMESTAMP_NTZ"],
+    )
+    df = px.scatter(
+        df, #this is the dataframe you are trying to plot
+        x = "TOTAL_CLAIMED_AMOUNT",
+        y = "NET_IN",
+        # color = "CLAIMER",
+        orientation = "v",
+        template = "plotly_white",
+        width = 1000,
+        height = 600,
+        log_y = t_f
+    )
     st.plotly_chart(df)
 
     # ------------------------------------------------

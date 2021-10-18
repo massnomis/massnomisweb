@@ -54,6 +54,6 @@ def app():
     
 
     st.plotly_chart(df)
-
+# DAYZ	tx_countz	user_count	SUM	AVG	Median	STD DEV	Z_P1	Z_N1	AVG_Value_Z_Score_(Skew)	RUNNING_SKEW	RUNNING_SUM	RUNNING_COUNTZ
     # ------------------------------------------------
 
