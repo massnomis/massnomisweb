@@ -7,6 +7,6 @@ import pandas as pd
 import json
 def app():
 
-    #st.set_page_config(layout="wide")
     st.title("YEET")
     st.write('list of everything here. what it is yada yada') # df, err, func, keras!
+    st.markdown("""'beth,flashy,aave_migration,bluna,compare,eth_fees,eth_matic_vol,extra,GPdata,gpusers,home,loop1,loop2,polygon_fees,steth'""")
