@@ -30,21 +30,14 @@ def app():
 
     st.markdown("""
     """)
-    
 
-    st.sidebar.header("Choose Columns:")
-    columns = st.sidebar.multiselect(
-        "Select the columns to plot",
-        options = df.columns,
-        default = df.columns.max()
-    )
 
 
     df = px.scatter(
         df, #this is the dataframe you are trying to plot
         x = "LAST_CLAIMED",
-        y = columns,
-        color = "CLAIMER",
+        y = "NET_STAKED",
+        color = "TOTAL_CLAIMED_AMOUNT",
         orientation = "v",
         template = "plotly_white",
         width = 1000,
@@ -57,5 +50,5 @@ def app():
 
     # ------------------------------------------------
 
-
+# LAST_CLAIMED	CLAIMER	LAST_CLAIMED_AMOUNT	TOTAL_CLAIMED_AMOUNT	MIN_STAGE	MAX_STAGE	AMOUNT_STAKED	AMOUNT_UNSTAKED	NET_STAKED	PCT_STAKED_LAST	BUY_AMOUNT	SELL_AMOUNT	NET_BOUGHT	PCT_BOUGHT_LAST	TRANSFER_IN	TRANSFER_OUT	NET_IN	PCT_TRANSFER_LAST
 # https://app.flipsidecrypto.com/velocity/queries/a0f06e6e-9b8c-44f2-9934-25a6e6e0801b
