@@ -32,12 +32,7 @@ def app():
     """)
     
 
-    st.sidebar.header("Choose Columns:")
-    columns = st.sidebar.multiselect(
-        "Select the columns to plot",
-        options = df.columns,
-        default = df.columns.max()
-    )
+
 
     df = px.line(
         df, #this is the dataframe you are trying to plot
@@ -62,7 +57,7 @@ def app():
     df2 = px.line(
         df2, #this is the dataframe you are trying to plot
         x = "DAYZZZ",
-        y = columns,
+        y = "AVG(INV)",
         #color = columns,
         orientation = "v",
         template = "plotly_white",
@@ -73,4 +68,11 @@ def app():
     
 
     st.plotly_chart(df2)
+
+
+
+# DAYZZZ	AVG(STETH_WETH)	AVG(MADAYLWETH_STETH)	AVG(MA3DAYLWETH_STETH)	AVG(INV)	
+# AVG(MADAYLSTETH_WETH)	AVG(MA3DAYLSTETH_WETH)	AVG(MAWEEKLSTETH_WETH)	AVG(WETH_STETH)	AVG(OUTAVGETH)
+# 	AVG(OUTMEDETH)	AVG(OUTSTDDEVETH)	AVG(INSUMWETH)	AVG(INAVGWETH)	AVG(INMEDWETH)	AVG(INSTDDEVWETH)	AVG(OUTSUMSTETH)	AVG(OUTSUMWETH)	AVG(OUTAVGSTETH)	
+# AVG(OUTMEDSTETH)	AVG(OUTSTDDEVSTETH)	AVG(INSUMSTETH)	AVG(INAVGSTETH)	AVG(INMEDSTETH)	AVG(INSTDDEVSTETH)    # 
 # https://app.flipsidecrypto.com/velocity/queries/7a5f2ddb-e8f0-4f90-aee7-220264b8f958

@@ -32,18 +32,13 @@ def app():
     """)
     
 
-    st.sidebar.header("Choose Columns:")
-    columns = st.sidebar.multiselect(
-        "Select the columns to plot",
-        options = df.columns,
-        default = df.columns.max()
-    )
+  
 
 
     df = px.scatter(
         df, #this is the dataframe you are trying to plot
         x = "DAYZ",
-        y = columns,
+        y = ["ETHPRICE","PRICEBETH"],
         #color = columns,
         orientation = "v",
         template = "plotly_white",
@@ -51,11 +46,41 @@ def app():
         height = 600,
         log_y = t_f
     )
-    
-
+    st.plotly_chart(df)
+    query_id = "7a0e46d4-191d-4931-a3ed-ec540fa05b64"
+    df = pd.read_json(f"https://api.flipsidecrypto.com/api/v2/queries/{query_id}/data/latest",
+    convert_dates=["TIMESTAMP_NTZ"],
+)
+    df = px.scatter(
+        df, #this is the dataframe you are trying to plot
+        x = "DAYZ",
+        y = ["ETHPREMIUM"],
+        #color = columns,
+        orientation = "v",
+        template = "plotly_white",
+        width = 1000,
+        height = 600,
+        log_y = t_f
+    )
+    st.plotly_chart(df)
+    query_id = "7a0e46d4-191d-4931-a3ed-ec540fa05b64"
+    df = pd.read_json(f"https://api.flipsidecrypto.com/api/v2/queries/{query_id}/data/latest",
+    convert_dates=["TIMESTAMP_NTZ"],
+)
+    df = px.scatter(
+        df, #this is the dataframe you are trying to plot
+        x = "DAYZ",
+        y = ["ETHPREMIUMPCT"],
+        #color = columns,
+        orientation = "v",
+        template = "plotly_white",
+        width = 1000,
+        height = 600,
+        log_y = t_f
+    )
     st.plotly_chart(df)
 
     # ------------------------------------------------
-
+# DAYZ	ETHPRICE	PRICEBETH	ETHPREMIUM	ETHPREMIUMPCT
 
 #  https://app.flipsidecrypto.com/velocity/queries/7a0e46d4-191d-4931-a3ed-ec540fa05b64

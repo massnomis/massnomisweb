@@ -37,7 +37,7 @@ def app():
         df, #this is the dataframe you are trying to plot
         x = "LAST_CLAIMED",
         y = "NET_STAKED",
-        color = "TOTAL_CLAIMED_AMOUNT",
+        color = "CLAIMER",
         orientation = "v",
         template = "plotly_white",
         width = 1000,

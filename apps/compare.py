@@ -32,18 +32,13 @@ def app():
     """)
     
 
-    st.sidebar.header("Choose Columns:")
-    columns = st.sidebar.multiselect(
-        "Select the columns to plot",
-        options = df.columns,
-        default = df.columns.max()
-    )
+
 
 
     df = px.line(
         df, #this is the dataframe you are trying to plot
         x = "DAYZ",
-        y = columns,
+        y = ["ETHPREMIUMPCT","LUNAPREMIUMPCT"],
         #color = columns,
         orientation = "v",
         template = "plotly_white",
@@ -51,7 +46,7 @@ def app():
         height = 600,
         log_y = t_f
     )
-    
-
     st.plotly_chart(df)
+
+    # DAYZ	ETHPRICE	PRICEBETH	ETHPREMIUM	ETHPREMIUMPCT	LUNAPRICE	PRICEBLUNA	LUNAPREMIUM	LUNAPREMIUMPCT
 # https://app.flipsidecrypto.com/velocity/queries/eb66ba08-c49b-4350-ab5a-ffd283231317
