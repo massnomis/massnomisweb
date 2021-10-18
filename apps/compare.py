@@ -35,7 +35,7 @@ def app():
 
 
 
-    df = px.line(
+    df = px.scatter(
         df, #this is the dataframe you are trying to plot
         x = "DAYZ",
         y = ["ETHPREMIUMPCT","LUNAPREMIUMPCT"],
