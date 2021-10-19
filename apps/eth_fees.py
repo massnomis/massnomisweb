@@ -40,7 +40,7 @@ def app():
     eth_fees_graph = px.line(
         eth_fees_flipside_df, #this is the dataframe you are trying to plot
         x = "ETH_DAY",
-        y = "transaction_count",
+        y = "TRANSACTION_COUNT",
         #color = columns,
         orientation = "v",
         template = "plotly_white",
@@ -56,7 +56,7 @@ def app():
     eth_fees_graph = px.line(
         eth_fees_flipside_df, #this is the dataframe you are trying to plot
         x = "ETH_DAY",
-        y = ["efees_usdavg","efees_usdmed"],
+        y = ["EFEES_USDAVG","EFEES_USDMED"],
         #color = columns,
         orientation = "v",
         template = "plotly_white",
@@ -71,7 +71,7 @@ def app():
     eth_fees_graph = px.line(
         eth_fees_flipside_df, #this is the dataframe you are trying to plot
         x = "ETH_DAY",
-        y = ["efees_usd"],
+        y = ["EFEES_USD"],
         #color = columns,
         orientation = "v",
         template = "plotly_white",
@@ -86,7 +86,7 @@ def app():
     eth_fees_graph = px.line(
         eth_fees_flipside_df, #this is the dataframe you are trying to plot
         x = "ETH_DAY",
-        y = ["eZ1","eZn1"],
+        y = ["EZ1","EFEES_USDSTD","EZN1"],
         #color = columns,
         orientation = "v",
         template = "plotly_white",

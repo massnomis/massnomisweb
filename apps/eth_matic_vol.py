@@ -122,7 +122,7 @@ def app():
     st.plotly_chart(eth_matic_graph) 
 
     vol_flipside_df = pd.read_json('https://api.flipsidecrypto.com/api/v2/queries/5a7ac116-7647-44ce-a421-1316b0974b28/data/latest')
-    eth_matic_graph = px.line(
+    eth_matic_graph = px.scatter(
         vol_flipside_df, #this is the dataframe you are trying to plot
         x = "BLOCK_HOUR_MATIC",
         y = ["PCT_MATIC","PCT_ETH"],

@@ -40,7 +40,7 @@ def app():
     polygon_fees_graph = px.line(
         poly_fees_flipside_df, #this is the dataframe you are trying to plot
         x = "POLYGON_DAY",
-        y = "transaction_count",
+        y = "TRANSACTION_COUNT",
         #color = columns,
         orientation = "v",
         template = "plotly_white",
@@ -54,7 +54,7 @@ def app():
     polygon_fees_graph = px.line(
         poly_fees_flipside_df, #this is the dataframe you are trying to plot
         x = "POLYGON_DAY",
-        y = ["pfees_usdavg","pfees_usdmed"],
+        y = ["PFEES_USDAVG","PFEES_USDMED"],
         #color = columns,
         orientation = "v",
         template = "plotly_white",
@@ -68,7 +68,7 @@ def app():
     polygon_fees_graph = px.line(
         poly_fees_flipside_df, #this is the dataframe you are trying to plot
         x = "POLYGON_DAY",
-        y = ["pfees_usd"],
+        y = ["PFEES_USD"],
         #color = columns,
         orientation = "v",
         template = "plotly_white",
@@ -82,7 +82,7 @@ def app():
     polygon_fees_graph = px.line(
         poly_fees_flipside_df, #this is the dataframe you are trying to plot
         x = "POLYGON_DAY",
-        y = ["pZ1","pZn1"],
+        y = ["PZ1","PFEES_USDSTD","PZN1"],
         #color = columns,
         orientation = "v",
         template = "plotly_white",
