@@ -62,4 +62,11 @@ def app():
  
 
     # ------------------------------------------------
-
+# polygon_day
+# transaction_count
+# pfees_usd
+# pfees_usdavg
+# pfees_usdmed
+# pfees_usdstd
+# pZ1
+# pZn1

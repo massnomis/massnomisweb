@@ -62,3 +62,11 @@ def app():
 
     # ------------------------------------------------
 
+#   eth_day
+#    transaction_count
+# efees_usd
+#  efees_usdavg
+# efees_usdmed
+#   efees_usdstd
+# eZ1
+#   eZn1
