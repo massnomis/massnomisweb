@@ -47,6 +47,8 @@ def app():
         log_y = t_f
     )
     st.plotly_chart(df)
+    st.subheader('For those who got the airdrop for LOOP, and later became an LP, how many transactions did each user add liquidity? The colors are ranking the total amount of UST that each user invested.')
+
 
     query_id = "c96f0ab3-0f21-40bf-883a-90b566ed4320"
     df4 = pd.read_json(f"https://api.flipsidecrypto.com/api/v2/queries/{query_id}/data/latest",
@@ -64,6 +66,8 @@ def app():
         log_y = t_f
     )
     st.plotly_chart(df4) 
+    st.subheader('The same can be said about those who removed liquidity. However, here not all users are present, because not everyone removed their liquidit')
+
     query_id = "c96f0ab3-0f21-40bf-883a-90b566ed4320"
     df1 = pd.read_json(f"https://api.flipsidecrypto.com/api/v2/queries/{query_id}/data/latest",
     convert_dates=["TIMESTAMP_NTZ"],
@@ -79,7 +83,9 @@ def app():
         height = 600,
         log_y = t_f
     )
-    st.plotly_chart(df1)    
+    st.plotly_chart(df1)  
+    st.subheader('The whales (for UST in were most active on october 7th, being the quickest to act.')
+  
 
 
 
@@ -101,6 +107,8 @@ def app():
         log_y = t_f
     )
     st.plotly_chart(df2) 
+    st.subheader('If you view this chart, of UST removed, in LOG format, you can see that its kind of a convoluted mess, but those who made profit, at least by removing liquidity were faster to act than those who only put in.')
+
 
 
     query_id = "c96f0ab3-0f21-40bf-883a-90b566ed4320"
@@ -119,6 +127,8 @@ def app():
         log_y = t_f
     )
     st.plotly_chart(df3) 
+    st.subheader('Interestingly enough those who made profit are even less correlated with the amount out, but this makes sense that some whales, who were kind of late to the game, did take some unrealized gains/profits as they are likely to not remove their liquidity, yet.')
+
 
 
 

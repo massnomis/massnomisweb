@@ -47,6 +47,8 @@ def app():
         log_y = t_f
     )
     st.plotly_chart(df)
+    st.subheader('Taken at times when both beth and bluna have reported prices the same minute Percentage wise, beth has more variance, but bluna is native to terra and beth is not, making it harder to close that gap')
+
 
     # DAYZ	ETHPRICE	PRICEBETH	ETHPREMIUM	ETHPREMIUMPCT	LUNAPRICE	PRICEBLUNA	LUNAPREMIUM	LUNAPREMIUMPCT
 # https://app.flipsidecrypto.com/velocity/queries/eb66ba08-c49b-4350-ab5a-ffd283231317

@@ -45,6 +45,8 @@ def app():
         log_y = t_f
     )
     st.plotly_chart(df)
+    st.subheader('Lets look at airdrop recipients and what they did for LOOP Those who claimed a lot, were more likely to sell, while the smaller people were grateful and bought more.')
+
     query_id = "a0f06e6e-9b8c-44f2-9934-25a6e6e0801b"
     df = pd.read_json(f"https://api.flipsidecrypto.com/api/v2/queries/{query_id}/data/latest",
     convert_dates=["TIMESTAMP_NTZ"],
@@ -61,6 +63,8 @@ def app():
         log_y = t_f
     )
     st.plotly_chart(df)
+    st.subheader('Net bought Net in shows the same story, theres a line visible showing the claimed amount and the dumping of tokens')
+
     query_id = "a0f06e6e-9b8c-44f2-9934-25a6e6e0801b"
     df = pd.read_json(f"https://api.flipsidecrypto.com/api/v2/queries/{query_id}/data/latest",
     convert_dates=["TIMESTAMP_NTZ"],
@@ -77,6 +81,8 @@ def app():
         log_y = t_f
     )
     st.plotly_chart(df)
+    st.subheader('What about in 3 dimensions? We like people who buy. They are more likely to be small rather than large')
+
     query_id = "a0f06e6e-9b8c-44f2-9934-25a6e6e0801b"
     df = pd.read_json(f"https://api.flipsidecrypto.com/api/v2/queries/{query_id}/data/latest",
     convert_dates=["TIMESTAMP_NTZ"],
@@ -93,6 +99,8 @@ def app():
         log_y = t_f
     )
     st.plotly_chart(df)
+    st.subheader('The line of dumping is more clear, but we can identify who is a good candidate to airdrop to. The minnows')
+
 
     # ------------------------------------------------
 

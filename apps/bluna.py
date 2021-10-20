@@ -47,6 +47,8 @@ def app():
         log_y = t_f
     )
     st.plotly_chart(df)
+    st.subheader('bluna, during the crash, Compared prices')
+
     query_id = "1cbadddb-c968-47de-ab65-e46285ff3bc7"
     df = pd.read_json(f"https://api.flipsidecrypto.com/api/v2/queries/{query_id}/data/latest",
     convert_dates=["TIMESTAMP_NTZ"],
@@ -63,6 +65,8 @@ def app():
         log_y = t_f
     )
     st.plotly_chart(df)
+    st.subheader('Premium')
+
     query_id = "1cbadddb-c968-47de-ab65-e46285ff3bc7"
     df = pd.read_json(f"https://api.flipsidecrypto.com/api/v2/queries/{query_id}/data/latest",
     convert_dates=["TIMESTAMP_NTZ"],
@@ -79,6 +83,8 @@ def app():
         log_y = t_f
     )
     st.plotly_chart(df)
+    st.subheader('Premium PERCENT')
+
 
 
     # ------------------------------------------------

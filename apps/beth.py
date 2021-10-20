@@ -47,6 +47,8 @@ def app():
         log_y = t_f
     )
     st.plotly_chart(df)
+    st.subheader('Compared prices')
+    
     query_id = "7a0e46d4-191d-4931-a3ed-ec540fa05b64"
     df = pd.read_json(f"https://api.flipsidecrypto.com/api/v2/queries/{query_id}/data/latest",
     convert_dates=["TIMESTAMP_NTZ"],
@@ -63,6 +65,8 @@ def app():
         log_y = t_f
     )
     st.plotly_chart(df)
+    st.subheader('Premium')
+
     query_id = "7a0e46d4-191d-4931-a3ed-ec540fa05b64"
     df = pd.read_json(f"https://api.flipsidecrypto.com/api/v2/queries/{query_id}/data/latest",
     convert_dates=["TIMESTAMP_NTZ"],
@@ -81,6 +85,8 @@ def app():
 
 
     st.plotly_chart(df)
+    st.subheader('Premium percent')
+
     query_id = "7a5f2ddb-e8f0-4f90-aee7-220264b8f958"
     df = pd.read_json(f"https://api.flipsidecrypto.com/api/v2/queries/{query_id}/data/latest",
     convert_dates=["TIMESTAMP_NTZ"],
@@ -107,6 +113,8 @@ def app():
         log_y = t_f
     )
     st.plotly_chart(df)
+    st.subheader('Weth-steth price on curve')
+
 
 
     query_id = "7a5f2ddb-e8f0-4f90-aee7-220264b8f958"
@@ -129,6 +137,8 @@ def app():
     
 
     st.plotly_chart(df2)
+    st.subheader('Curve invariant at this time')
+
     # ------------------------------------------------
 # DAYZ	ETHPRICE	PRICEBETH	ETHPREMIUM	ETHPREMIUMPCT
 
