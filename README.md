@@ -21,7 +21,7 @@ eth
 massnomis.eth or, (same thing)
 0xba2ef5189B762bd4C9E7f0b50fBBaB65193935e8
 polygon mutisig
-0x57E86D9Ba12a9986DdC7B5DDd6610ef9c26A3F48]
+0x57E86D9Ba12a9986DdC7B5DDd6610ef9c26A3F48
 xdai multisig
 0xd9DEcDCDdF2c75a8c444ebac94fe3d9D0a9D0489
 eth mainnet multisig
@@ -29,6 +29,9 @@ eth mainnet multisig
 
 terra
 terra10p7drrhhnuwt2nhux700sn0n6mcm37dfeua227
+
+
+
 sol
 G3wFjVo8xyxjhYmHDehPbbUJwQGFhBZnudLPBmri5c86
 
