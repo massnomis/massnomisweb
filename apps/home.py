@@ -7,10 +7,35 @@ import pandas as pd
 import json
 def app():
 
+    # st.set_page_config(layout="wide")
     st.title("WElcome")
-    st.write('list of everything here. what it is yada yada') # df, err, func, keras!
+    st.subheader('GM GM GM GM')
+    st.write('Now that I have a functioning front end, you must bear with me as I attempt to figure out how to code. Again, I started with SQL with Flipside, then tried python to make this.') 
+    
+    # st.write('list of everything here. what it is yada yada') # df, err, func, keras!
+    st.title("ATTENTION GJ: These are the questions I am answering this week.")
+    st.header('80. [Elite] Historic bAssets Price Movements') # see *
+    st.subheader('beth, bluna, Compare')
+    st.header('91. [Loop] Loop LPers') # see *
+    st.subheader('LOOP1')
+    st.header('80. [Elite] Historic bAssets Price Movements') # see *
+    st.subheader('LOOP2')
+    st.header('93. [Loop] Post-Airdrop Behavior') # see *
+    st.subheader('LOOP1')
+    st.header('95. [Galactic Punks] Traders & Collectors') # see *
+    st.subheader('GPusers')
+    st.header('98. [Galactic Punks] Free Square') # see *
+    st.subheader('GPdata')
+
+
+
+    st.title("........................")
+
     st.title("Following Categories:")
     st.write('@massnomis') # df, err, func, keras!
+
+
+
 
     st.header('NFTs:')
     st.subheader('FLASHY')
