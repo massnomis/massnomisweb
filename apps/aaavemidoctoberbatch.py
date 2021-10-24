@@ -139,9 +139,9 @@ def app():
 )
     df = px.scatter(
         df, #this is the dataframe you are trying to plot
-        x = "PCT_LOAN_REPAYED",
-        y = ["AGGREGATED_LOAN_AMOUNT"],
-        color = "WHALE_NUMBER",
+        x = "WHALE_NUMBER",
+        y = ["PCT_LOAN_REPAYED"],
+        color = "AGGREGATED_LOAN_AMOUNT",
         # orientation = "v",
         template = "plotly_white",
         width = 1000,
@@ -157,23 +157,23 @@ def app():
     st.title("26. [Hard] Whale Activities (besides having diamond hand) aave")
 
     
-#     query_id = "fe7ec729-41c2-4097-a34e-9be3ed78b390"
-#     df = pd.read_json(f"https://api.flipsidecrypto.com/api/v2/queries/{query_id}/data/latest",
-#     convert_dates=["TIMESTAMP_NTZ"],
-# )
-#     df = px.scatter_3d(
-#         df, #this is the dataframe you are trying to plot
-#         x = "PCT_LOAN_REPAYED * 100",
-#         y = ["AGGREGATED_LOAN_AMOUNT"],
-#         color = "WHALE_NUMBERZ",
-#         # orientation = "v",
-#         template = "plotly_white",
-#         width = 1000,
-#         height = 600,
-#         log_y = t_f
-#     )
-#     st.plotly_chart(df)
-# 	
+    query_id = "fe7ec729-41c2-4097-a34e-9be3ed78b390"
+    df = pd.read_json(f"https://api.flipsidecrypto.com/api/v2/queries/{query_id}/data/latest",
+    convert_dates=["TIMESTAMP_NTZ"],
+)
+    df = px.scatter(
+        df, #this is the dataframe you are trying to plot
+        x = "WHALE_NUMBERZ",
+        y = ["PCT_LOAN_REPAYED"],
+        color = "AGGREGATED_LOAN_AMOUNT",
+        # orientation = "v",
+        template = "plotly_white",
+        width = 1000,
+        height = 600,
+        log_y = t_f
+    )
+    st.plotly_chart(df)
+	
 # AGGREGATED_LOAN_AMOUNT	
 # PCT_LOAN_REPAYED * 100	
 # WHALE_NUMBERZ
