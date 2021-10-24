@@ -55,11 +55,28 @@ def app():
     df = pd.read_json(f"https://api.flipsidecrypto.com/api/v2/queries/{query_id}/data/latest",
     convert_dates=["TIMESTAMP_NTZ"],
 )
-    df = px.scatter(
+    df = px.bar(
         df, #this is the dataframe you are trying to plot
-        x = "DDATE",
-        y = ["SUM(RUNE_AMOUNT)"],
-        color = "BURN_ASSET",
+        x = "TO_ADDRESS_NAME",
+        y = ["TOTAL_AMOUNT"],
+        color = "SYMBOL",
+        orientation = "v",
+        template = "plotly_white",
+        width = 1000,
+        height = 600,
+        log_y = t_f
+    )
+    st.plotly_chart(df)
+
+    query_id = "c859c36b-ca8f-4fa4-ba5b-09744c7b6e2b"
+    df = pd.read_json(f"https://api.flipsidecrypto.com/api/v2/queries/{query_id}/data/latest",
+    convert_dates=["TIMESTAMP_NTZ"],
+)
+    df = px.bar(
+        df, #this is the dataframe you are trying to plot
+        x = "TO_LABEL",
+        y = ["TOTAL_AMOUNT"],
+        color = "SYMBOL",
         orientation = "v",
         template = "plotly_white",
         width = 1000,
@@ -69,8 +86,9 @@ def app():
     st.plotly_chart(df)
 
 
-
-
+# TOTAL_AMOUNT	SYMBOL
+# 
+# TO_ADDRESS_NAME	TO_LABEL
 
     st.title("25. [Hard] Most Popular COMBOS  -- aave")
 
@@ -79,11 +97,12 @@ def app():
     df = pd.read_json(f"https://api.flipsidecrypto.com/api/v2/queries/{query_id}/data/latest",
     convert_dates=["TIMESTAMP_NTZ"],
 )
-    df = px.scatter(
+    
+    df = px.bar(
         df, #this is the dataframe you are trying to plot
-        x = "DDATE",
-        y = ["ADD_COUNT"],
-        color = "BURN_ASSET",
+        x = "TO_ADDRESS_NAME",
+        y = ["TOTAL_AMOUNT"],
+        color = "SYMBOL",
         orientation = "v",
         template = "plotly_white",
         width = 1000,
@@ -92,6 +111,25 @@ def app():
     )
     st.plotly_chart(df)
 
+    query_id = "9f901ec4-4da3-4283-a312-e81fec52e505"
+    df = pd.read_json(f"https://api.flipsidecrypto.com/api/v2/queries/{query_id}/data/latest",
+    convert_dates=["TIMESTAMP_NTZ"],
+)
+    df = px.bar(
+        df, #this is the dataframe you are trying to plot
+        x = "TO_LABEL",
+        y = ["TOTAL_AMOUNT"],
+        color = "SYMBOL",
+        orientation = "v",
+        template = "plotly_white",
+        width = 1000,
+        height = 600,
+        log_y = t_f
+    )
+    st.plotly_chart(df)
+# TOTAL_AMOUNT	SYMBOL
+# 
+# TO_ADDRESS_NAME	TO_LABEL
     st.title("26. [Hard] Whale Activities (besides having diamond hand) comp")
 
     
@@ -101,9 +139,9 @@ def app():
 )
     df = px.scatter(
         df, #this is the dataframe you are trying to plot
-        x = "DAYZ",
-        y = ["SUM(TO_AMOUNT_MIN_USD)"],
-        color = "POOL_NAME",
+        x = "PCT_LOAN_REPAYED",
+        y = ["AGGREGATED_LOAN_AMOUNT"],
+        color = "WHALE_NUMBER",
         orientation = "v",
         template = "plotly_white",
         width = 1000,
@@ -112,7 +150,9 @@ def app():
     )
     st.plotly_chart(df)
 
-
+# WHALE_NUMBER	
+# 	AGGREGATED_LOAN_AMOUNT	
+# PCT_LOAN_REPAYED
 
     st.title("26. [Hard] Whale Activities (besides having diamond hand) aave")
 
@@ -123,9 +163,9 @@ def app():
 )
     df = px.scatter(
         df, #this is the dataframe you are trying to plot
-        x = "DAY",
-        y = ["SWAP_VOLUME"],
-        color = "POOL_NAME",
+        x = "PCT_LOAN_REPAYED * 100",
+        y = ["AGGREGATED_LOAN_AMOUNT"],
+        color = "WHALE_NUMBERZ",
         orientation = "v",
         template = "plotly_white",
         width = 1000,
@@ -133,9 +173,8 @@ def app():
         log_y = t_f
     )
     st.plotly_chart(df)
-
-    query_id = "7a2c77bb-ca33-41cf-b002-2a8c147dcfc6"
-    df = pd.read_json(f"https://api.flipsidecrypto.com/api/v2/queries/{query_id}/data/latest",
-    convert_dates=["TIMESTAMP_NTZ"],
-)
+# 	
+# AGGREGATED_LOAN_AMOUNT	
+# PCT_LOAN_REPAYED * 100	
+# WHALE_NUMBERZ
 
