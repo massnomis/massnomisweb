@@ -261,3 +261,27 @@ def app():
     st.plotly_chart(df)
 
 
+    st.title("FREE EXTRA SWAPS BY CHAIN")
+
+    
+    query_id = "e85b23cb-141f-420a-ab35-2bd0e78c8694"
+    df = pd.read_json(f"https://api.flipsidecrypto.com/api/v2/queries/{query_id}/data/latest",
+    convert_dates=["TIMESTAMP_NTZ"],
+)
+    df = px.scatter(
+        df, #this is the dataframe you are trying to plot
+        x = "DAYZ",
+        y = ["COUNT(DISTINCT(TX_ID))","COUNT(DISTINCT(FROM_ADDRESS))","COUNT(DISTINCT(TO_ADDRESS))"],
+        color = "BLOCKCHAIN",
+        orientation = "v",
+        template = "plotly_white",
+        width = 1000,
+        height = 600,
+        log_y = t_f
+    )
+    st.plotly_chart(df)
+    # DAYZ
+    # BLOCKCHAIN	
+    # COUNT(DISTINCT(TX_ID) )
+    # COUNT(DISTINCT(FROM_ADDRESS))	
+    # COUNT(DISTINCT(TO_ADDRESS))
