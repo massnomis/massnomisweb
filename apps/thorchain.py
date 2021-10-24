@@ -26,7 +26,6 @@ def app():
 #-------------------------------------------------------
     
 
-    st.dataframe(df)
 
     st.markdown("""
     """)
@@ -35,10 +34,10 @@ def app():
     
 
 
-    df = px.scatter(
+    df = px.line(
         df, #this is the dataframe you are trying to plot
         x = "DAY",
-        y = ["DAILY_APY"],
+        y = ["REWARDS"],
         color = "POOL_NAME",
         orientation = "v",
         template = "plotly_white",
@@ -67,7 +66,6 @@ def app():
         height = 600,
         log_y = t_f
     )
-    st.dataframe(df)
     st.plotly_chart(df)
 
 
@@ -92,7 +90,6 @@ def app():
         height = 600,
         log_y = t_f
     )
-    st.dataframe(df)
     st.plotly_chart(df)
 
     st.title("4. [Easy] Total volume swapped by pool and over time")
@@ -106,14 +103,13 @@ def app():
         df, #this is the dataframe you are trying to plot
         x = "DAYZ",
         y = ["SUM(TO_AMOUNT_MIN_USD)"],
-        color = "BLOCKCHAIN",
+        color = "POOL_NAME",
         orientation = "v",
         template = "plotly_white",
         width = 1000,
         height = 600,
         log_y = t_f
     )
-    st.dataframe(df)
     st.plotly_chart(df)
 
 
@@ -136,26 +132,13 @@ def app():
         height = 600,
         log_y = t_f
     )
-    st.dataframe(df)
     st.plotly_chart(df)
 
     query_id = "7a2c77bb-ca33-41cf-b002-2a8c147dcfc6"
     df = pd.read_json(f"https://api.flipsidecrypto.com/api/v2/queries/{query_id}/data/latest",
     convert_dates=["TIMESTAMP_NTZ"],
 )
-    df = px.line(
-        df, #this is the dataframe you are trying to plot
-        x = "DAY",
-        y = ["SWAP_COUNT"],
-        color = "POOL_NAME",
-        orientation = "v",
-        template = "plotly_white",
-        width = 1000,
-        height = 600,
-        log_y = t_f
-    )
-    st.dataframe(df)
-    st.plotly_chart(df)
+
 
     st.title("6. [Easy] Number of LPs")
 
@@ -175,7 +158,6 @@ def app():
         height = 600,
         log_y = t_f
     )
-    st.dataframe(df)
     st.plotly_chart(df)
 
 
@@ -187,10 +169,10 @@ def app():
     df = pd.read_json(f"https://api.flipsidecrypto.com/api/v2/queries/{query_id}/data/latest",
     convert_dates=["TIMESTAMP_NTZ"],
 )
-    df = px.scatter(
+    df = px.line(
         df, #this is the dataframe you are trying to plot
-        x = "DDATE",
-        y = ["A_TVL"],
+        x = "DAY",
+        y = ["APY_NODE_OPS","APY_LPS"],
         # color = columns,
         orientation = "v",
         template = "plotly_white",
@@ -198,7 +180,6 @@ def app():
         height = 600,
         log_y = t_f
     )
-    st.dataframe(df)
     st.plotly_chart(df)
 
 
@@ -214,14 +195,13 @@ def app():
         df, #this is the dataframe you are trying to plot
         x = "DHOUR",
         y = ["COUNT(POOL_NAME)"],
-        #color = columns,
+        color = "POOL_NAME",
         orientation = "v",
         template = "plotly_white",
         width = 1000,
         height = 600,
         log_y = t_f
     )
-    st.dataframe(df)
     st.plotly_chart(df)
 
     st.title("9. [Hard] RUNE price vs Swapper activity")
@@ -234,7 +214,7 @@ def app():
     df = px.line(
         df, #this is the dataframe you are trying to plot
         x = "DAY",
-        y = ["VOLSUM","RUNEP","VOLSUM/RUNEP"],
+        y = ["VOLSUM"],
         #color = columns,
         orientation = "v",
         template = "plotly_white",
@@ -242,7 +222,42 @@ def app():
         height = 600,
         log_y = t_f
     )
-    st.dataframe(df)
+    st.plotly_chart(df)
+
+    
+    query_id = "4ef88898-00e1-4596-9750-81d65c26b7e4"
+    df = pd.read_json(f"https://api.flipsidecrypto.com/api/v2/queries/{query_id}/data/latest",
+    convert_dates=["TIMESTAMP_NTZ"],
+)
+    df = px.line(
+        df, #this is the dataframe you are trying to plot
+        x = "DAY",
+        y = ["RUNEP"],
+        #color = columns,
+        orientation = "v",
+        template = "plotly_white",
+        width = 1000,
+        height = 600,
+        log_y = t_f
+    )
+    st.plotly_chart(df)
+
+    
+    query_id = "4ef88898-00e1-4596-9750-81d65c26b7e4"
+    df = pd.read_json(f"https://api.flipsidecrypto.com/api/v2/queries/{query_id}/data/latest",
+    convert_dates=["TIMESTAMP_NTZ"],
+)
+    df = px.line(
+        df, #this is the dataframe you are trying to plot
+        x = "DAY",
+        y = ["VOLSUM/RUNEP"],
+        #color = columns,
+        orientation = "v",
+        template = "plotly_white",
+        width = 1000,
+        height = 600,
+        log_y = t_f
+    )
     st.plotly_chart(df)
 
 
