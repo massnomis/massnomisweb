@@ -46,6 +46,10 @@ def app():
         log_y = t_f
     )
     st.plotly_chart(df)
+
+
+    st.subheader('We got distinct:DEPOSITORS,WITHDRAWERS,BORROWERS, and	REPAYERS for AAVE v2')
+
 # DAYZ	DEPOSITORS	WITHDRAWERS	BORROWERS	REPAYERS
 
     st.title("25. [Hard] Most Popular COMBOS  -- comp")
@@ -67,6 +71,7 @@ def app():
         log_y = t_f
     )
     st.plotly_chart(df)
+    st.subheader('What are comp users using their loans for???')
 
     query_id = "c859c36b-ca8f-4fa4-ba5b-09744c7b6e2b"
     df = pd.read_json(f"https://api.flipsidecrypto.com/api/v2/queries/{query_id}/data/latest",
@@ -84,7 +89,7 @@ def app():
         log_y = t_f
     )
     st.plotly_chart(df)
-
+    st.subheader('slighly different labels')
 
 # TOTAL_AMOUNT	SYMBOL
 # 
@@ -110,6 +115,7 @@ def app():
         log_y = t_f
     )
     st.plotly_chart(df)
+    st.subheader('and aave users?')
 
     query_id = "9f901ec4-4da3-4283-a312-e81fec52e505"
     df = pd.read_json(f"https://api.flipsidecrypto.com/api/v2/queries/{query_id}/data/latest",
@@ -127,6 +133,8 @@ def app():
         log_y = t_f
     )
     st.plotly_chart(df)
+    st.subheader('slighly different labels, again')
+
 # TOTAL_AMOUNT	SYMBOL
 # 
 # TO_ADDRESS_NAME	TO_LABEL
@@ -149,6 +157,7 @@ def app():
         log_y = t_f
     )
     st.plotly_chart(df)
+    st.subheader('now live in 3d from compound. Does whale size predict repayments? ')
 
 # WHALE_NUMBER	
 # 	AGGREGATED_LOAN_AMOUNT	
@@ -173,6 +182,7 @@ def app():
         log_y = t_f
     )
     st.plotly_chart(df)
+    st.subheader('now live in 3d from AAVE. Does whale size predict repayments? ')
 	
 
     st.title("WHALE REPAYMENT TREND aave")
@@ -194,5 +204,7 @@ def app():
         log_y = t_f
     )
     st.plotly_chart(df)
+    st.subheader('lucky you for getting a bonus')
+
 
     # 24660e5d-2047-4da7-8039-f087b8af2a5f

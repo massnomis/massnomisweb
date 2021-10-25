@@ -46,7 +46,7 @@ def app():
         log_y = t_f
     )
     st.plotly_chart(df)
-
+    st.subheader('above we see the rewards in RUNE given out to each pool daily')
 
     st.title("2. [Easy]Volume of THORChain Activity by Asset ")
 
@@ -68,7 +68,7 @@ def app():
     )
     st.plotly_chart(df)
 
-
+    st.subheader('When an asset is sent to/from thorchain, some RUNE gets burnt, hence the axis name')
 
 
 
@@ -91,6 +91,8 @@ def app():
         log_y = t_f
     )
     st.plotly_chart(df)
+    st.subheader('per chain, per bridge, not in the fridge')
+
 
     st.title("4. [Easy] Total volume swapped by pool and over time")
 
@@ -111,6 +113,7 @@ def app():
         log_y = t_f
     )
     st.plotly_chart(df)
+    st.subheader('Plotting here the sum of expected swap returns, its just the best way to calculate it')
 
 
 
@@ -133,6 +136,8 @@ def app():
         log_y = t_f
     )
     st.plotly_chart(df)
+    st.subheader('swap volume by pool, some pools dont have normal names, sorry')
+
 
     query_id = "7a2c77bb-ca33-41cf-b002-2a8c147dcfc6"
     df = pd.read_json(f"https://api.flipsidecrypto.com/api/v2/queries/{query_id}/data/latest",
@@ -160,7 +165,7 @@ def app():
     )
     st.plotly_chart(df)
 
-
+    st.subheader('Number of uniqe LPs by pool, daily, LPs may overlap with each other')
 
     st.title("7. [Hard] Weekly APY")
 
@@ -181,6 +186,7 @@ def app():
         log_y = t_f
     )
     st.plotly_chart(df)
+    st.subheader('You either make money by operating a node, or by being a liquidity provider. Both have their own pros and cons but the returns are simmilar. Hashtag priced in')
 
 
 
@@ -203,6 +209,8 @@ def app():
         log_y = t_f
     )
     st.plotly_chart(df)
+    st.subheader('which hour of the day has the most swapping... which pool? times are GMT 24 hours')
+
 
     st.title("9. [Hard] RUNE price vs Swapper activity")
 
@@ -223,6 +231,7 @@ def app():
         log_y = t_f
     )
     st.plotly_chart(df)
+    st.subheader('here we have the volume')
 
     
     query_id = "4ef88898-00e1-4596-9750-81d65c26b7e4"
@@ -241,6 +250,7 @@ def app():
         log_y = t_f
     )
     st.plotly_chart(df)
+    st.subheader('next the price of RUNE')
 
     
     query_id = "4ef88898-00e1-4596-9750-81d65c26b7e4"
@@ -259,6 +269,7 @@ def app():
         log_y = t_f
     )
     st.plotly_chart(df)
+    st.subheader('and lastly, sum over the price of rune. is there any correlation? not really')
 
 
     st.title("FREE EXTRA SWAPS BY CHAIN")
@@ -280,6 +291,8 @@ def app():
         log_y = t_f
     )
     st.plotly_chart(df)
+    st.subheader('distinct to and from addresses, distinct transactions by blockchain and day.')
+
     # DAYZ
     # BLOCKCHAIN	
     # COUNT(DISTINCT(TX_ID) )
