@@ -137,11 +137,11 @@ def app():
     df = pd.read_json(f"https://api.flipsidecrypto.com/api/v2/queries/{query_id}/data/latest",
     convert_dates=["TIMESTAMP_NTZ"],
 )
-    df = px.scatter(
+    df = px.scatter_3d(
         df, #this is the dataframe you are trying to plot
-        x = "WHALE_NUMBER",
-        y = ["PCT_LOAN_REPAYED"],
-        color = "AGGREGATED_LOAN_AMOUNT",
+        x = "WHALE_NUMBERZ",
+        y = "PCT_LOAN_REPAYED",
+        z = "AGGREGATED_LOAN_AMOUNT",
         # orientation = "v",
         template = "plotly_white",
         width = 1000,
@@ -157,15 +157,15 @@ def app():
     st.title("26. [Hard] Whale Activities (besides having diamond hand) aave")
 
     
-    query_id = "fe7ec729-41c2-4097-a34e-9be3ed78b390"
+    query_id = "74387ded-bd97-42e8-82e4-809dd7db03e8"
     df = pd.read_json(f"https://api.flipsidecrypto.com/api/v2/queries/{query_id}/data/latest",
     convert_dates=["TIMESTAMP_NTZ"],
 )
-    df = px.scatter(
+    df = px.scatter_3d(
         df, #this is the dataframe you are trying to plot
         x = "WHALE_NUMBERZ",
-        y = ["PCT_LOAN_REPAYED"],
-        color = "AGGREGATED_LOAN_AMOUNT",
+        y = "PCT_LOAN_REPAYED",
+        z = "AGGREGATED_LOAN_AMOUNT",
         # orientation = "v",
         template = "plotly_white",
         width = 1000,
@@ -174,7 +174,25 @@ def app():
     )
     st.plotly_chart(df)
 	
-# AGGREGATED_LOAN_AMOUNT	
-# PCT_LOAN_REPAYED * 100	
-# WHALE_NUMBERZ
 
+    st.title("WHALE REPAYMENT TREND aave")
+
+    
+    query_id = "24660e5d-2047-4da7-8039-f087b8af2a5f"
+    df = pd.read_json(f"https://api.flipsidecrypto.com/api/v2/queries/{query_id}/data/latest",
+    convert_dates=["TIMESTAMP_NTZ"],
+)
+    df = px.line(
+        df, #this is the dataframe you are trying to plot
+        x = "DS",
+        y = ["REPAYMENT_RATE"],
+        # color = "AGGREGATED_LOAN_AMOUNT",
+        # orientation = "v",
+        template = "plotly_white",
+        width = 1000,
+        height = 600,
+        log_y = t_f
+    )
+    st.plotly_chart(df)
+
+    # 24660e5d-2047-4da7-8039-f087b8af2a5f
