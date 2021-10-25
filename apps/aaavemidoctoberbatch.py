@@ -139,7 +139,7 @@ def app():
 )
     df = px.scatter_3d(
         df, #this is the dataframe you are trying to plot
-        x = "WHALE_NUMBERZ",
+        x = "WHALE_NUMBER",
         y = "PCT_LOAN_REPAYED",
         z = "AGGREGATED_LOAN_AMOUNT",
         # orientation = "v",
