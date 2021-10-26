@@ -1,6 +1,6 @@
 import streamlit as st
 from multiapp import MultiApp
-from apps import beth,flashy,aaavemidoctoberbatch,thorchain,aave_migration,bluna,compare,eth_fees,eth_matic_vol,extra,GPdata,gpusers,home,loop1,loop2,polygon_fees,steth
+from apps import beth,FlipsideValidator,flashy,aaavemidoctoberbatch,thorchain,aave_migration,bluna,compare,eth_fees,eth_matic_vol,extra,GPdata,gpusers,home,loop1,loop2,polygon_fees,steth
 # import your app modules here
 
 app = MultiApp()
@@ -45,8 +45,10 @@ app.add_app("thorchain", thorchain.app)
 
 app.add_app("aaavemidoctoberbatch", aaavemidoctoberbatch.app)
 
-# aaavemidoctoberbatch
+app.add_app("FlipsideValidator", FlipsideValidator.app)
 
+# aaavemidoctoberbatch
+# FlipsideValidator
 
 
 
