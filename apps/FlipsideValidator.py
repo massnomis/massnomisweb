@@ -73,7 +73,7 @@ def app():
     df = pd.read_json(f"https://api.flipsidecrypto.com/api/v2/queries/{query_id}/data/latest",
     convert_dates=["TIMESTAMP_NTZ"],
     )
-    df = px.line(
+    df = px.scatter(
         df, #this is the dataframe you are trying to plot
         x = "DAYZZZ",
         y = ["RUNNING_LUNA","RUNNING_LUNA_OUT"],
