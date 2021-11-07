@@ -1,7 +1,7 @@
 # Commands to start on workspace startup
 tasks:
   - init: pip install streamlit
-  - init: pip install plotly=
+  - init: pip install plotly
   - init: pip install statsmodels
   - init: pip install pandas
   - init: pip install Pillow
