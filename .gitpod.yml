@@ -1,10 +1,10 @@
 # Commands to start on workspace startup
 tasks:
   - init: pip install streamlit
-    init: pip install plotly
-    init: pip install statsmodels
-    init: pip install pandas
-    init: pip install Pillow
+  - init: pip install plotly
+  - init: pip install statsmodels
+  - init: pip install pandas
+  - init: pip install Pillow
   - name: setsup
     command: streamlit run app.py
 # Ports to expose on workspace startup
