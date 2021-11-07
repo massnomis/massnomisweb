@@ -19,7 +19,7 @@ streamlit run app.py
 works with heroku and streamlit
 
 
-
+https://massnomisweb.herokuapp.com/
 
 eth
 massnomis.eth or, (same thing)
