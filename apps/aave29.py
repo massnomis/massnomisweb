@@ -9,10 +9,14 @@ def app():
 
     #st.set_page_config(layout="wide")
    
+    st.title("Fees and Average Deposit and Withdrawel Sizes. ")
+    st.title("HINT: USE LOG SCALE BY CLICKING THE THING ON THE LEFT")
 
+    query_id = "207f12b8-1ff4-45d1-ade6-4669914ff410"
+    df = pd.read_json(f"https://api.flipsidecrypto.com/api/v2/queries/{query_id}/data/latest",
+    convert_dates=["TIMESTAMP_NTZ"],
+)
 
-
-    vol_flipside_df = pd.read_json('https://api.flipsidecrypto.com/api/v2/queries/0a70ffca-17a3-4cd8-8b42-d0820c7dbc48/data/latest')
 
     t_f = False
     st.sidebar.write("Choose y-axis scale")
@@ -24,29 +28,18 @@ def app():
 #-------------------------------------------------------
     
     st.markdown("""
-    ### Eth - Matic Vol - Base Table
+    ### AAVE 29 SER
     """)
 
-    st.dataframe(vol_flipside_df)
-
-    st.markdown("""
-    """)
-    
-
-    st.sidebar.header("Choose Columns:")
-    columns = st.sidebar.multiselect(
-        "Select the columns to plot",
-        options = vol_flipside_df.columns,
-        default = vol_flipside_df.columns.max()
-    )
 
 
-    eth_matic_graph = px.line(
-        vol_flipside_df, #this is the dataframe you are trying to plot
-        x = "DAYZ",
-        y = columns,
+
+    df = px.line(
+        df, #this is the dataframe you are trying to plot
+        x = "DAYZD",
+        y = ["FEED","FEEB"],
         #color = columns,
-        title = "<b>DIY / Choose your own adventure - Eth/Matic</b>",
+        title = "AVG FEEZ by action: FEED is avg fee for deposit and FEEB is avg fee for borrow",
         orientation = "v",
         template = "plotly_white",
         width = 1000,
@@ -55,6 +48,100 @@ def app():
     )
     
 
-    st.plotly_chart(eth_matic_graph)
+    st.plotly_chart(df)
+    query_id = "207f12b8-1ff4-45d1-ade6-4669914ff410"
+    df = pd.read_json(f"https://api.flipsidecrypto.com/api/v2/queries/{query_id}/data/latest",
+    convert_dates=["TIMESTAMP_NTZ"],
+)
+    df = px.scatter(
+        df, #this is the dataframe you are trying to plot
+        x = "DAYZD",
+        y = ["FEED","FEEB"],
+        #color = columns,
+        title = "AVG FEEZ by action: FEED is avg fee for deposit and FEEB is avg fee for borrow",
+        orientation = "v",
+        template = "plotly_white",
+        width = 1000,
+        height = 600,
+        log_y = t_f
+    )
+    
 
+    st.plotly_chart(df)
+
+
+    query_id = "207f12b8-1ff4-45d1-ade6-4669914ff410"
+    df = pd.read_json(f"https://api.flipsidecrypto.com/api/v2/queries/{query_id}/data/latest",
+    convert_dates=["TIMESTAMP_NTZ"],
+)
+    df = px.line(
+        df, #this is the dataframe you are trying to plot
+        x = "DAYZD",
+        y = ["AVG(SUPPLIED_USD)","AVG(BORROWED_USD)"],
+        #color = columns,
+        title = "AVG USD in/out by action",
+        orientation = "v",
+        template = "plotly_white",
+        width = 1000,
+        height = 600,
+        log_y = t_f
+    )
+    st.plotly_chart(df)
+    query_id = "207f12b8-1ff4-45d1-ade6-4669914ff410"
+    df = pd.read_json(f"https://api.flipsidecrypto.com/api/v2/queries/{query_id}/data/latest",
+    convert_dates=["TIMESTAMP_NTZ"],
+)
+    df = px.scatter(
+        df, #this is the dataframe you are trying to plot
+        x = "DAYZD",
+        y = ["AVG(SUPPLIED_USD)","AVG(BORROWED_USD)"],
+        #color = columns,
+        title = "AVG USD in/out by action",
+        orientation = "v",
+        template = "plotly_white",
+        width = 1000,
+        height = 600,
+        log_y = t_f
+    )
+    st.plotly_chart(df)
+
+    query_id = "207f12b8-1ff4-45d1-ade6-4669914ff410"
+    df = pd.read_json(f"https://api.flipsidecrypto.com/api/v2/queries/{query_id}/data/latest",
+    convert_dates=["TIMESTAMP_NTZ"],
+)
+    df = px.line(
+        df, #this is the dataframe you are trying to plot
+        x = "DAYZD",
+        y = ["DRATIO","BRATIO"],
+        #color = columns,
+        title = "Special Ratio. Ratio of AMOUNT USD to Fee in USD, categorized by D(deposit) and B(Borrow)",
+        orientation = "v",
+        template = "plotly_white",
+        width = 1000,
+        height = 600,
+        log_y = t_f
+    )
+    st.plotly_chart(df)
+    query_id = "207f12b8-1ff4-45d1-ade6-4669914ff410"
+    df = pd.read_json(f"https://api.flipsidecrypto.com/api/v2/queries/{query_id}/data/latest",
+    convert_dates=["TIMESTAMP_NTZ"],
+)
+    df = px.scatter(
+        df, #this is the dataframe you are trying to plot
+        x = "DAYZD",
+        y = ["DRATIO","BRATIO"],
+        #color = columns,
+        title = "Special Ratio. Ratio of AMOUNT USD to Fee in USD, categorized by D(deposit) and B(Borrow)",
+        orientation = "v",
+        template = "plotly_white",
+        width = 1000,
+        height = 600,
+        log_y = t_f
+    )
+    st.plotly_chart(df)
+
+
+
+# DAYZD	AVG(SUPPLIED_USD)	FEED	DRATIO
+# DAYZB	AVG(BORROWED_USD)	FEEB	BRATIO
     
