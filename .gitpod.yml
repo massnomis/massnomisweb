@@ -6,7 +6,7 @@ tasks:
     pip install statsmodels
     pip install pandas
     pip install Pillow
-  - command: streamlit run app.py
+   - command: streamlit run app.py
 # Ports to expose on workspace startup
 ports:
   - port: 8501
