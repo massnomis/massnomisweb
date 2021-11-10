@@ -1,0 +1,11 @@
+# Commands to start on workspace startup
+tasks:
+ - before: pip install streamlit
+ - before: pip install plotly
+ - before: pip install statsmodels
+ - before: pip install pandas
+ - before: pip install Pillow
+# Ports to expose on workspace startup
+ports:
+  - port: 8501
+    onOpen: open-preview
