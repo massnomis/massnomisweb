@@ -13,8 +13,10 @@ def app():
     
     # st.write('list of everything here. what it is yada yada') # df, err, func, keras!
     st.title("ATTENTION GJ: These are the questions I am answering this week.")
-    st.title("THORCHAIN: THORCHAIN")
-    st.title("AAVE: AAVEmidoctoberbountyround")
+    st.title("THORCHAIN: EarlynovTHOR")
+    st.title("AAVE:AAVE29")
+    st.title("PYLON:MINELUNA, minestaking")
+
 
     st.header('80. [Elite] Historic bAssets Price Movements') # see *
     st.subheader('beth, bluna, Compare')

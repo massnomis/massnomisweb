@@ -60,7 +60,7 @@ def app():
         #color = columns,
         orientation = "v",
         template = "plotly_white",
-        width = 10000,
+        width = 1000,
         height = 600,
         log_y = t_f
     )
