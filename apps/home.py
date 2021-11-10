@@ -16,6 +16,8 @@ def app():
     st.title("THORCHAIN: EarlynovTHOR")
     st.title("AAVE:AAVE29")
     st.title("PYLON:MINELUNA, minestaking")
+    st.title("BONUS:STOLEN LEVANA SHOWER NFT MEGA EGG")
+
 
 
     st.header('80. [Elite] Historic bAssets Price Movements') # see *
