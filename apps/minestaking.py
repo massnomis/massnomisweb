@@ -84,5 +84,25 @@ def app():
         log_y = t_f
     )
     st.plotly_chart(df) 
+
+
+
+    df = pd.read_json('https://api.flipsidecrypto.com/api/v2/queries/31f56a18-518b-4b95-9c1a-641e10c034be/data/latest')
+    df = px.scatter(
+        df, #this is the dataframe you are trying to plot
+        x = "DAYZ",
+        y = ["AMOUNT_STAKED","AMOUNT_UNSTAKEDN"],
+        color = "FROMM",
+        orientation = "v",
+        template = "plotly_white",
+        width = 1000,
+        height = 600,
+        log_y = t_f
+    )
+    st.plotly_chart(df) 
+    
+
+# DAYZ	FROMM	AMOUNT_STAKED	AMOUNT_UNSTAKEDN
+
     # ------------------------------------------------
 # DAYZ	AMOUNT_STAKED	AMOUNT_UNSTAKED	NET	RUNNING
