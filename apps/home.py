@@ -13,9 +13,10 @@ def app():
     
     # st.write('list of everything here. what it is yada yada') # df, err, func, keras!
     st.title("ATTENTION GJ: These are the questions I am answering this week.")
-    st.title("THORCHAIN: EarlynovTHOR")
+    st.title("THORCHAIN: THORCHAINMIDNOV")
     st.title("AAVE:AAVE29")
-    st.title("PYLON:MINELUNA, minestaking")
+    st.title("SUSHI:MIDNOVSUSHI")
+    st.title("LUNA:MIDNOVLUNA")
     st.title("BONUS:STOLEN LEVANA SHOWER NFT MEGA EGG")
 
 
