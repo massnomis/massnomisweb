@@ -45,7 +45,7 @@ def app():
         log_y = t_f
     )
     st.plotly_chart(df)
-    
+
     query_id = "43394653-19ab-4b48-a210-8f8315647b47"
     df = pd.read_json(
         f"https://api.flipsidecrypto.com/api/v2/queries/{query_id}/data/latest",
@@ -65,7 +65,6 @@ def app():
         height = 600,
         log_y = t_f
     )
-    st.plotly_chart(df)
     st.plotly_chart(df)
     query_id = "44b209b9-d197-4b3b-b5eb-328a1db2b8fd"
     df = pd.read_json(
