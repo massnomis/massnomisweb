@@ -15,3 +15,4 @@ def app():
     if check: 
         t_f = True
     df = px.bar(df, x = "DATE" , y = "ETHEREUM_UNIQUE_WALLETS" , title = "yay" , orientation = "v" , template = "plotly_white" ,  width = 1000, height = 600, log_y = t_f)
+    st.plotly_chart(df)
