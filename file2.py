@@ -1,2 +1,2 @@
-from apps import qtpie
-app.add_app("qtpie",qtpie.app)
+from apps import qtpi
+app.add_app("qtpi",qtpi.app)
