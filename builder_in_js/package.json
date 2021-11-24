@@ -1,0 +1,22 @@
+{
+  "name": "generatescript",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "main": "npm run main"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thehargun/GenerateScript.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/thehargun/GenerateScript/issues"
+  },
+  "homepage": "https://github.com/thehargun/GenerateScript#readme",
+  "dependencies": {
+    "prompt-sync": "^4.2.0"
+  }
+}
