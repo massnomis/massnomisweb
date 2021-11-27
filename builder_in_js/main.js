@@ -5,7 +5,6 @@ fs = require('fs');
 const prompt = require('prompt-sync')();
 const id = prompt('Paste Query ID:');
 const title = prompt('Title:');
-const subheader = prompt('Subheader:');
 const x = prompt('X Value:');
 const y = prompt('Y Value:');
 
@@ -55,7 +54,6 @@ def app():
         log_y = t_f
     )
     st.plotly_chart(df)
-    // st.subheader('${subheader}')
 
 loop
 
