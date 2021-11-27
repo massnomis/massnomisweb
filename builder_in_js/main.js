@@ -5,6 +5,7 @@ fs = require('fs');
 const prompt = require('prompt-sync')();
 const id = prompt('Paste Query ID:');
 const title = prompt('Title:');
+const chart_type = prompt('chart_type:');
 const x = prompt('X Value:');
 const y = prompt('Y Value:');
 
@@ -43,7 +44,7 @@ def app():
     
 
 
-    df = px.scatter(
+    df = px.${chart_type}(
         df, #this is the dataframe you are trying to plot
         x = "${x}",
         y = "${y}",
@@ -62,7 +63,7 @@ loop
 `
 
 //print template
-fs.writeFile(`${title}.txt`, code, function(err) {
+fs.writeFile(`${title}.py`, code, function(err) {
     if (err) return console.log(err);
     console.log('done');
 });
