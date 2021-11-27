@@ -8,8 +8,12 @@ Utilizing past queries from flipside, and open source API's like Debank, Zapper,
 users should be a able to use already done queries, and create charts based on these, as well as add some comentary and some spice.
 
 
-#right now,
-working on merging branches and bringing in better documentation. Here
+# right now,
+working on merging branches and bringing in better documentation. 
+
+
+# Here
+https://docs.streamlit.io/library/components/components-api
 
 
 
