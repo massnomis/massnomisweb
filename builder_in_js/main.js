@@ -6,10 +6,8 @@ const prompt = require('prompt-sync')();
 const id = prompt('Paste Query ID:');
 const title = prompt('Title:');
 const subheader = prompt('Subheader:');
-const layout = prompt('Layout:');
 const x = prompt('X Value:');
 const y = prompt('Y Value:');
-const color = prompt('Color:');
 
 //python script code template
 code = `import streamlit as st
@@ -19,8 +17,6 @@ import pandas as pd
 import json
 
 def app():
-
-    #st.set_page_config(layout="${layout}")
     st.title("${title}")
 
     query_id = "${id}"
@@ -52,7 +48,6 @@ def app():
         df, #this is the dataframe you are trying to plot
         x = "${x}",
         y = "${y}",
-        // color = "${color}",
         orientation = "v",
         template = "plotly_white",
         width = 1000,
