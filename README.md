@@ -43,12 +43,12 @@ streamlit run app.py
 
 
 
-#works with heroku and streamlit
+# works with heroku and streamlit
 
 https://massnomisweb.herokuapp.com/
 
 
-#to donate...
+# to donate...
 
 eth
 massnomis.eth or, (same thing)
