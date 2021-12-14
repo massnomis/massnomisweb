@@ -4,9 +4,9 @@ import plotly.express as px
 import pandas as pd
 import json
 
-st.title("SUSHI ETH mid december")
+st.title("THOR MID DEC")
 
-query_id = "6b94a94d-f8f3-4856-a3a7-fc655cb9ac6c"
+query_id = "bc3fd76c-5e84-4b77-9575-8e883da90a91"
 df = pd.read_json(
     f"https://api.flipsidecrypto.com/api/v2/queries/{query_id}/data/latest",
 convert_dates=["TIMESTAMP_NTZ"],
@@ -23,10 +23,9 @@ if check:
 #-------------------------------------------------------
 
 
-st.dataframe(df)
 
 st.markdown("""
-""")
+LP RANK, POOLS AND ACTIONS""")
 
 
 
@@ -34,10 +33,10 @@ st.markdown("""
 
 df = px.bar(
     df, #this is the dataframe you are trying to plot
-    x = "DAYZ",
-    y = "COUNT(TO_ADDRESS_NAME)",
+    x = "RANK",
+    y = "POOLZ",
     orientation = "v",
-    color = "TO_ADDRESS_NAME",
+    # color = "TO_ADDRESS_NAME",
     template = "plotly_white",
     width = 1000,
     height = 600,
@@ -47,25 +46,23 @@ st.plotly_chart(df)
 
 
 
-query_id = "712872e7-ca98-4504-8afd-5ddf5c3e41d0"
+query_id = "bc3fd76c-5e84-4b77-9575-8e883da90a91"
 df = pd.read_json(
     f"https://api.flipsidecrypto.com/api/v2/queries/{query_id}/data/latest",
 convert_dates=["TIMESTAMP_NTZ"],
 )
 
-st.dataframe(df)
 
 st.markdown("""
-pee pee poo poo check
-""")
+THOR ACTIONS""")
 
 
 df = px.bar(
     df, #this is the dataframe you are trying to plot
-    x = "DAYZ",
-    y = "COUNT(TO_ADDRESS_NAME)",
+    x = "RANK",
+    y = "LP_ACTIONS",
     orientation = "v",
-    color = "TO_ADDRESS_NAME",
+    # color = "TO_ADDRESS_NAME",
     template = "plotly_white",
     width = 1000,
     height = 600,
@@ -76,22 +73,22 @@ st.plotly_chart(df)
 
 
 
-query_id = "2ca64776-431b-42ff-b0e6-7f324b4aed35"
+query_id = "02c1a44e-f003-4a43-92b3-da6d17c1bc88"
 df = pd.read_json(
     f"https://api.flipsidecrypto.com/api/v2/queries/{query_id}/data/latest",
 convert_dates=["TIMESTAMP_NTZ"],
 )
 
-st.dataframe(df)
 
 st.markdown("""
+RUN, XRUNE, THOR Prices
 """)
 
 
 df = px.scatter(
     df, #this is the dataframe you are trying to plot
     x = "HOURZ",
-    y = "P",
+    y = ["RUNE_PRICE","THOR_PRICE","XRUNE_PRICE"],
     orientation = "v",
     # color = "TO_ADDRESS_NAME",
     template = "plotly_white",
@@ -101,44 +98,3 @@ df = px.scatter(
 )
 st.plotly_chart(df)
 
-
-
-query_id = "2ca64776-431b-42ff-b0e6-7f324b4aed35"
-df = pd.read_json(
-    f"https://api.flipsidecrypto.com/api/v2/queries/{query_id}/data/latest",
-convert_dates=["TIMESTAMP_NTZ"],
-)
-
-df = px.bar(
-    df, #this is the dataframe you are trying to plot
-    x = "HOURZ",
-    y = "SUSHI",
-    orientation = "v",
-    # color = "TO_ADDRESS_NAME",
-    template = "plotly_white",
-    width = 1000,
-    height = 600,
-    log_y = t_f
-)
-st.plotly_chart(df)
-
-
-
-query_id = "2ca64776-431b-42ff-b0e6-7f324b4aed35"
-df = pd.read_json(
-    f"https://api.flipsidecrypto.com/api/v2/queries/{query_id}/data/latest",
-convert_dates=["TIMESTAMP_NTZ"],
-)
-
-df = px.bar(
-    df, #this is the dataframe you are trying to plot
-    x = "HOURZ",
-    y = "WETH",
-    orientation = "v",
-    # color = "TO_ADDRESS_NAME",
-    template = "plotly_white",
-    width = 1000,
-    height = 600,
-    log_y = t_f
-)
-st.plotly_chart(df)
