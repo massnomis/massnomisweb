@@ -23,9 +23,12 @@ if check:
 #-------------------------------------------------------
 
 
-st.dataframe(df)
+
 
 st.markdown("""
+
+What Pool is Hot right now? On ethereum lets look at LP actions, by count.
+
 """)
 
 
@@ -56,7 +59,7 @@ convert_dates=["TIMESTAMP_NTZ"],
 st.dataframe(df)
 
 st.markdown("""
-pee pee poo poo check
+and the same thing for polygon
 """)
 
 
@@ -82,9 +85,11 @@ df = pd.read_json(
 convert_dates=["TIMESTAMP_NTZ"],
 )
 
-st.dataframe(df)
+
 
 st.markdown("""
+When sushi and ETH were both in freefall in december 8th, sushi breifly jumped against ETH. The price here is how many SUSHI in 1 ETH
+
 """)
 
 
@@ -109,6 +114,10 @@ df = pd.read_json(
 convert_dates=["TIMESTAMP_NTZ"],
 )
 
+st.markdown("""
+in the SUSHI-WETH pool, lets look at inflow and outflow for sushi
+""")
+
 df = px.bar(
     df, #this is the dataframe you are trying to plot
     x = "HOURZ",
@@ -129,6 +138,10 @@ df = pd.read_json(
     f"https://api.flipsidecrypto.com/api/v2/queries/{query_id}/data/latest",
 convert_dates=["TIMESTAMP_NTZ"],
 )
+
+st.markdown("""
+in the SUSHI-WETH pool, lets look at inflow and outflow for WETH
+""")
 
 df = px.bar(
     df, #this is the dataframe you are trying to plot

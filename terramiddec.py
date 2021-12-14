@@ -25,6 +25,7 @@ if check:
 
 
 st.markdown("""
+VALIDATOR RANKINGS
 """)
 
 
@@ -53,7 +54,7 @@ convert_dates=["TIMESTAMP_NTZ"],
 
 
 st.markdown("""
-RANK VALIDATORS""")
+VALIDATORS, the top ten, voting power""")
 
 
 df = px.bar(
@@ -78,7 +79,7 @@ convert_dates=["TIMESTAMP_NTZ"],
 
 
 st.markdown("""
-nft terra1""")
+nft terra, how many transations for NFTS we seeing?""")
 
 
 df = px.bar(
@@ -102,7 +103,7 @@ convert_dates=["TIMESTAMP_NTZ"],
 
 
 st.markdown("""
-nft terra1""")
+nft terra, daily volume in LUNA""")
 
 
 df = px.bar(
@@ -126,7 +127,7 @@ convert_dates=["TIMESTAMP_NTZ"],
 
 
 st.markdown("""
-nft terra1""")
+nft terra, Average Price and Max price for NFTs sold""")
 
 
 df = px.bar(
@@ -150,7 +151,10 @@ convert_dates=["TIMESTAMP_NTZ"],
 
 
 st.markdown("""
-nft terra2""")
+nft terra, NFTS sold by price, categorized by marketplace
+
+
+""")
 
 
 df = px.bar(
@@ -174,7 +178,7 @@ convert_dates=["TIMESTAMP_NTZ"],
 
 
 st.markdown("""
-nft terra2""")
+nft terra, transactions by marketplace""")
 
 
 df = px.bar(
@@ -198,7 +202,10 @@ convert_dates=["TIMESTAMP_NTZ"],
 
 
 st.markdown("""
-bluna1""")
+bluna-LUNA
+this shows the ratio of LUNA being bonded to the unbonding of BLUNA
+
+""")
 
 
 df = px.scatter(
@@ -222,7 +229,7 @@ convert_dates=["TIMESTAMP_NTZ"],
 
 
 st.markdown("""
-bluna1""")
+bluna being unbonded""")
 
 
 df = px.scatter(
@@ -245,7 +252,7 @@ convert_dates=["TIMESTAMP_NTZ"],
 
 
 st.markdown("""
-bluna1""")
+LUNA being BONDED""")
 
 
 df = px.scatter(
@@ -270,7 +277,7 @@ convert_dates=["TIMESTAMP_NTZ"],
 
 
 st.markdown("""
-bluna2""")
+bluna-LUNA price on terraswap""")
 
 
 df = px.scatter(
@@ -295,7 +302,7 @@ convert_dates=["TIMESTAMP_NTZ"],
 
 
 st.markdown("""
-bluna2""")
+bluna-LUNA premiums""")
 
 
 df = px.scatter(
