@@ -140,7 +140,7 @@ my_slider_val = st.slider('slider is project rank', 1, 96)
 st.write(my_slider_val)
 df_new = df[df["PROJECT_RANK"] == my_slider_val]
 
-linechart = px.line(
+linechart = px.scatter(
     df_new,
     x="DAY",
     y=["TXN_VOLUME"],
@@ -154,7 +154,7 @@ st.plotly_chart(linechart, use_container_width=False)
 
 
 
-linechart = px.line(
+linechart = px.scatter(
     df_new,
     x="DAY",
     y=["TXN_COUNT"],
