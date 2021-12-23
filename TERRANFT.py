@@ -144,7 +144,11 @@ linechart = px.line(
     df_new,
     x="DAY",
     y=["TXN_VOLUME"],
-    color="COL_NAME" 
+    color="COL_NAME",
+    orientation = "v",
+    template = "plotly_white",
+    width = 1000,
+    height = 600 
 )
 st.plotly_chart(linechart, use_container_width=False)
 
@@ -154,7 +158,11 @@ linechart = px.line(
     df_new,
     x="DAY",
     y=["TXN_COUNT"],
-    color="COL_NAME" 
+    color="COL_NAME",
+    orientation = "v",
+    template = "plotly_white",
+    width = 1000,
+    height = 600
 )
 st.plotly_chart(linechart, use_container_width=False)
 
@@ -189,3 +197,4 @@ df = px.bar(
     height = 600
 )
 # ,"TXN_VOLUME"]
+st.plotly_chart(df)
