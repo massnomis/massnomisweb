@@ -4,14 +4,14 @@ import plotly.express as px
 import pandas as pd
 import json
 
-st.title("")
+st.title("LEVANA NFTs")
 
 df = pd.read_json("https://api.flipsidecrypto.com/api/v2/queries/9bdc0745-9d56-4be2-8a56-b4ebcdb10a9a/data/latest",
 convert_dates=["TIMESTAMP_NTZ"],
 )
 
 st.markdown("""
-METEORS
+METEORS, transactions per day, by rarity
 """)
 
 
@@ -38,7 +38,7 @@ convert_dates=["TIMESTAMP_NTZ"],
 )
 
 st.markdown("""
-METEORS
+METEORS LUNA volume by rarity and day
 """)
 
 df = px.bar(
@@ -59,7 +59,7 @@ convert_dates=["TIMESTAMP_NTZ"],
 )
 
 st.markdown("""
-METEORS
+METEORS, average sale price, by day and rarity
 """)
 
 df = px.scatter(
@@ -80,7 +80,7 @@ convert_dates=["TIMESTAMP_NTZ"],
 )
 
 st.markdown("""
-METEORS
+METEORS, median sale price, by day and rarity
 """)
 
 df = px.scatter(
@@ -100,7 +100,7 @@ convert_dates=["TIMESTAMP_NTZ"],
 )
 
 st.markdown("""
-METEORS
+METEORS, FLOOR PRICE
 """)
 
 df = px.scatter(
@@ -120,7 +120,7 @@ convert_dates=["TIMESTAMP_NTZ"],
 )
 
 st.markdown("""
-METEORS
+METEORS, total sales by day and rarity
 """)
 
 df = px.bar(
@@ -140,7 +140,7 @@ convert_dates=["TIMESTAMP_NTZ"],
 )
 
 st.markdown("""
-METEORS
+METEORS, LUNA sum by rarity
 """)
 
 df = px.bar(
@@ -163,7 +163,7 @@ convert_dates=["TIMESTAMP_NTZ"],
 )
 
 st.markdown("""
-EGGS
+EGGS, total sales by day and rarity
 """)
 
 
@@ -185,7 +185,7 @@ convert_dates=["TIMESTAMP_NTZ"],
 )
 
 st.markdown("""
-EGGS
+EGGS, daily LUNA sale volume by rarity
 """)
 
 df = px.bar(
@@ -206,7 +206,7 @@ convert_dates=["TIMESTAMP_NTZ"],
 )
 
 st.markdown("""
-EGGS
+EGGS, average sale price by day and rarity
 """)
 
 df = px.scatter(
@@ -227,7 +227,7 @@ convert_dates=["TIMESTAMP_NTZ"],
 )
 
 st.markdown("""
-EGGS
+EGGS, median sale price by day and rarity
 """)
 
 df = px.scatter(
@@ -247,7 +247,7 @@ convert_dates=["TIMESTAMP_NTZ"],
 )
 
 st.markdown("""
-EGGS
+EGGS, FLOOR PRICE
 """)
 
 df = px.scatter(
@@ -267,7 +267,7 @@ convert_dates=["TIMESTAMP_NTZ"],
 )
 
 st.markdown("""
-EGGS
+EGGS, total sales count by rarity
 """)
 
 df = px.bar(
@@ -287,7 +287,7 @@ convert_dates=["TIMESTAMP_NTZ"],
 )
 
 st.markdown("""
-EGGS
+EGGS, LUNA running volume by rarity
 """)
 
 df = px.bar(
@@ -310,7 +310,7 @@ convert_dates=["TIMESTAMP_NTZ"],
 )
 
 st.markdown("""
-DUST
+DUST, transaction count by rarity
 """)
 
 
@@ -327,12 +327,16 @@ df = px.bar(
     log_y = t_f
 )
 st.plotly_chart(df)
+
+
+
+
 df = pd.read_json("https://api.flipsidecrypto.com/api/v2/queries/7e5ed5f7-8195-4f1d-b20c-a77f464b28e9/data/latest",
 convert_dates=["TIMESTAMP_NTZ"],
 )
 
 st.markdown("""
-DUST
+DUST LUNA VOLUME by day and rarity
 """)
 
 df = px.bar(
@@ -353,7 +357,7 @@ convert_dates=["TIMESTAMP_NTZ"],
 )
 
 st.markdown("""
-DUST
+DUST, average sale price, by day and rarity
 """)
 
 df = px.scatter(
@@ -374,7 +378,7 @@ convert_dates=["TIMESTAMP_NTZ"],
 )
 
 st.markdown("""
-DUST
+DUST median sale price by day and rarity
 """)
 
 df = px.scatter(
@@ -394,7 +398,7 @@ convert_dates=["TIMESTAMP_NTZ"],
 )
 
 st.markdown("""
-DUST
+DUST, floor ppice
 """)
 
 df = px.scatter(
@@ -414,7 +418,7 @@ convert_dates=["TIMESTAMP_NTZ"],
 )
 
 st.markdown("""
-DUST
+DUST, total sale count by day 
 """)
 
 df = px.bar(
@@ -434,7 +438,7 @@ convert_dates=["TIMESTAMP_NTZ"],
 )
 
 st.markdown("""
-DUST
+DUST, RUNNING LUNA SALES by rarity
 """)
 
 df = px.bar(
