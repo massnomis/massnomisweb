@@ -123,7 +123,7 @@ st.markdown("""
 METEORS
 """)
 
-df = px.scatter(
+df = px.bar(
     df, #this is the dataframe you are trying to plot
     x = "DAY",
     y = "RUNNING_TX_COUNT_SUM",
@@ -143,7 +143,7 @@ st.markdown("""
 METEORS
 """)
 
-df = px.scatter(
+df = px.bar(
     df, #this is the dataframe you are trying to plot
     x = "DAY",
     y = "RUNNING_VOLUME_SUM",
