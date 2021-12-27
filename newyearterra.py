@@ -11,7 +11,7 @@ convert_dates=["TIMESTAMP_NTZ"],
 )
 
 st.markdown("""
-BOR
+BOR (AVG)
 """)
 
 
@@ -24,7 +24,7 @@ if check:
 df = px.scatter(
     df, #this is the dataframe you are trying to plot
     x = "DAYZ",
-    y = ["AVG_BOR","MED_BOR","DIST_SENDER","BOR_TX_ID_CNT"],
+    y = "AVG_BOR",
     # color = "COL_NAME",
     orientation = "v",
     template = "plotly_white",
@@ -41,7 +41,76 @@ convert_dates=["TIMESTAMP_NTZ"],
 
 
 st.markdown("""
-BOR SUM
+MEDian BOR
+""")
+
+
+df = px.scatter(
+    df, #this is the dataframe you are trying to plot
+    x = "DAYZ",
+    y = "MED_BOR",
+    # color = "COL_NAME",
+    orientation = "v",
+    template = "plotly_white",
+    width = 1000,
+    height = 600,
+    log_y = t_f
+)
+st.plotly_chart(df)
+df = pd.read_json("https://api.flipsidecrypto.com/api/v2/queries/1b560f22-5db3-483a-9e96-c7951f1ea1b4/data/latest",
+convert_dates=["TIMESTAMP_NTZ"],
+)
+
+
+
+st.markdown("""
+DIST SEDNER""")
+
+
+df = px.scatter(
+    df, #this is the dataframe you are trying to plot
+    x = "DAYZ",
+    y = "DIST_SENDER",
+    # color = "COL_NAME",
+    orientation = "v",
+    template = "plotly_white",
+    width = 1000,
+    height = 600,
+    log_y = t_f
+)
+st.plotly_chart(df)
+
+df = pd.read_json("https://api.flipsidecrypto.com/api/v2/queries/1b560f22-5db3-483a-9e96-c7951f1ea1b4/data/latest",
+convert_dates=["TIMESTAMP_NTZ"],
+)
+
+
+
+st.markdown("""
+BOR_TX_ID_CNT""")
+
+
+df = px.scatter(
+    df, #this is the dataframe you are trying to plot
+    x = "DAYZ",
+    y = "BOR_TX_ID_CNT",
+    # color = "COL_NAME",
+    orientation = "v",
+    template = "plotly_white",
+    width = 1000,
+    height = 600,
+    log_y = t_f
+)
+st.plotly_chart(df)
+# ,"BOR_TX_ID_CNT"
+df = pd.read_json("https://api.flipsidecrypto.com/api/v2/queries/1b560f22-5db3-483a-9e96-c7951f1ea1b4/data/latest",
+convert_dates=["TIMESTAMP_NTZ"],
+)
+
+
+
+st.markdown("""
+BORrrow SUM
 """)
 
 
@@ -64,13 +133,13 @@ convert_dates=["TIMESTAMP_NTZ"],
 )
 
 st.markdown("""
-DEP
+AVG DEP
 """)
 
 df = px.line(
     df, #this is the dataframe you are trying to plot
     x = "DAYZ",
-    y = ["AVG_DEP","MED_DEP","DIST_SENDER","DEP_TX_ID_CNT"],
+    y = "AVG_DEP",
     # color = "COL_NAME",
     orientation = "v",
     template = "plotly_white",
@@ -79,7 +148,67 @@ df = px.line(
     log_y = t_f
 )
 st.plotly_chart(df)
+df = pd.read_json("https://api.flipsidecrypto.com/api/v2/queries/f57ab3c9-70da-478f-af91-65abe40fe34d/data/latest",
+convert_dates=["TIMESTAMP_NTZ"],
+)
 
+st.markdown("""
+MEDian_DEP
+""")
+
+df = px.line(
+    df, #this is the dataframe you are trying to plot
+    x = "DAYZ",
+    y = "MED_DEP",
+    # color = "COL_NAME",
+    orientation = "v",
+    template = "plotly_white",
+    width = 1000,
+    height = 600,
+    log_y = t_f
+)
+st.plotly_chart(df)
+df = pd.read_json("https://api.flipsidecrypto.com/api/v2/queries/f57ab3c9-70da-478f-af91-65abe40fe34d/data/latest",
+convert_dates=["TIMESTAMP_NTZ"],
+)
+
+st.markdown("""
+DIST_SENDER
+""")
+
+df = px.line(
+    df, #this is the dataframe you are trying to plot
+    x = "DAYZ",
+    y = "DIST_SENDER",
+    # color = "COL_NAME",
+    orientation = "v",
+    template = "plotly_white",
+    width = 1000,
+    height = 600,
+    log_y = t_f
+)
+st.plotly_chart(df)
+df = pd.read_json("https://api.flipsidecrypto.com/api/v2/queries/f57ab3c9-70da-478f-af91-65abe40fe34d/data/latest",
+convert_dates=["TIMESTAMP_NTZ"],
+)
+
+st.markdown("""
+DEP_TX_ID_CNT
+""")
+
+df = px.line(
+    df, #this is the dataframe you are trying to plot
+    x = "DAYZ",
+    y = "DEP_TX_ID_CNT",
+    # color = "COL_NAME",
+    orientation = "v",
+    template = "plotly_white",
+    width = 1000,
+    height = 600,
+    log_y = t_f
+)
+st.plotly_chart(df)
+# ,"DIST_SENDER","DEP_TX_ID_CNT"]
 df = pd.read_json("https://api.flipsidecrypto.com/api/v2/queries/f57ab3c9-70da-478f-af91-65abe40fe34d/data/latest",
 convert_dates=["TIMESTAMP_NTZ"],
 )
@@ -128,7 +257,7 @@ convert_dates=["TIMESTAMP_NTZ"],
 
 
 st.markdown("""
-LIQUIDATIONS """)
+LIQUIDATIONS, LUNA liquidated """)
 
 df = px.bar(
     df, #this is the dataframe you are trying to plot
@@ -151,7 +280,7 @@ convert_dates=["TIMESTAMP_NTZ"],
 
 
 st.markdown("""
-LIQUIDATIONS""")
+WEEKLY LUNA VOLATILITY""")
 # st.dataframe(df)
 
 df = px.bar(
@@ -176,6 +305,9 @@ convert_dates=["TIMESTAMP_NTZ"],
 
 
 st.markdown("""
+NEW ANCHOR USERS....
+
+
 ANC-UST""")
 # st.dataframe(df)
 
