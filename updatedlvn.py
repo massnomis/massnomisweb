@@ -450,6 +450,7 @@ df = px.bar(
     template = "plotly_white",
     width = 1000,
     height = 600,
+    color_discrete_sequence=["red", "green", "blue", "goldenrod", "magenta"],
     log_y = t_f
 )
 st.plotly_chart(df)
@@ -501,11 +502,18 @@ df = px.bar(
 # ,"TXN_VOLUME"]
 st.plotly_chart(df)
 
+# df = pd.read_json("https://api.flipsidecrypto.com/api/v2/queries/7e5ed5f7-8195-4f1d-b20c-a77f464b28e9/data/latest",
+# convert_dates=["TIMESTAMP_NTZ"],
+# )
 
 
+# df1 = pd.read_json("https://api.flipsidecrypto.com/api/v2/queries/9bdc0745-9d56-4be2-8a56-b4ebcdb10a9a/data/latest",
+# convert_dates=["TIMESTAMP_NTZ"],
+# )
 
 
-
-
-
+# st.dataframe(df1)
+# convert_dict = {
+# x: 'DATE' for x in df.select_dtypes('category').columns}
+# st.dataframe(df1.astype(convert_dict))
 
